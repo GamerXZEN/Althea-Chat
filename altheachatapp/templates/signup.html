@@ -1,0 +1,60 @@
+{% extends "base.html"%}
+{% block content %}
+	<h1>Sign Up</h1>
+	<form method="post">
+		{% csrf_token %}
+		<div class="form-group mb-4">>
+            <label for="first_name">Email/Phone:</label>
+            <input class="form-control" type="text" id="first_name" name="first_name" placeholder="Tom" required>
+        </div>
+		<div class="form-group mb-4">>
+            <label for="last_name">Email/Phone:</label>
+            <input class="form-control" type="text" id="last_name" name="last_name" placeholder="Clancy" required>
+        </div>
+		<div class="form-group mb-4">>
+            <label for="email">Email:</label>
+            <input class="form-control" type="email" id="email" name="email" placeholder="example@example.com" required>
+        </div>
+		<div class="form-group mb-4">>
+            <label for="username">Username:</label>
+            <input class="form-control" type="text" id="username" name="username" placeholder="GamerXZEN" required>
+        </div>
+		<div class="form-group mb-4">>
+            <label for="password">:</label>
+            <input class="form-control" type="text" id="password" name="password" placeholder="*********" required>
+        </div>
+		<div class="form-group mb-4">>
+            <label for="age">Address:</label>
+            <input class="form-control" type="text" id="age" name="age" placeholder="20" required>
+        </div>
+		<div class="form-group mb-4">>
+	        <label>Gender/label>
+	        <br>
+	        <div>
+		        <br>
+		        <div>>>
+	                <input class="btn-check form-control" type="radio" id="male" name="gender" value="male" required>
+	                <label class="btn btn-outline-secondary" for="male">Male</label>
+		        </div>
+		        <div>>>
+	                <input class="btn-check form-control" type="radio" id="female" name="gender" value="female" required>
+	                <label class="btn btn-outline-secondary" for="female">Female</label>
+		        </div>
+		        <div>>>
+	                <input class="btn-check form-control" type="radio" id="other" name="gender" value="other" required>
+	                <label class="btn btn-outline-secondary" for="other">Other</label>
+		        </div>
+	        </div>
+	        </label>
+		</div>
+		>> <button class="btn btn-secondary" type="submit">Submit</button>
+	    <br>
+        {% if messages %}
+	        <div class="alert alert-success">
+		        {% for message in messages %}
+			        {{ message }}
+		        {% endfor %}
+	        </div>
+        {% endif %}
+	</form>
+{% endblock %}
